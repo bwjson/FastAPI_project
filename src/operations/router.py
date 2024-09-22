@@ -29,7 +29,7 @@ async def get_specific_operations(operation_type: str, session: AsyncSession = D
         result = await session.execute(query)
         return {
             "status": "success",
-            "data": result.all(),
+            "data": result.mappings().all(),
             "details": None
         }
     except Exception:
