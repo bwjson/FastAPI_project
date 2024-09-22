@@ -1,0 +1,62 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables
+.env
+.env.*
+
+# Editor specific files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs and database
+*.log
+*.sqlite3
+
+# Migrations (for Alembic or other)
+migrations/
+alembic/
+alembic.ini
+
+# Pytest cache
+.cache/
+
+# Static files
+/static/
+build/
+dist/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# MyPy, Pylint, or other type hinting reports
+.mypy_cache/
+pylint.report
+
+# Redis or other cache files
+*.rdb
+
+# FastAPI generated files (like openapi.json)
+openapi.json
+
+# Docker related files
+docker-compose.override.yml
+.dockerignore
+
+# Uvicorn logs (if using Uvicorn)
+uvicorn.log
