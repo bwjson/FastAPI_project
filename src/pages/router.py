@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Request
 from fastapi.templating import Jinja2Templates
 
-from operations.router import get_specific_operations
+from src.operations.router import get_specific_operations
 
 router = APIRouter(
     prefix="/pages",

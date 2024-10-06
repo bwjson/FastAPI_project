@@ -3,15 +3,15 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from redis import asyncio as aioredis
-from auth.base_config import auth_backend, fastapi_users
-from auth.schemas import UserRead, UserCreate
-from operations.router import router as router_operation
-from tasks.router import router as router_tasks
-from pages.router import router as router_pages
-from chat.router import router as router_chat
+from src.auth.base_config import auth_backend, fastapi_users
+from src.auth.schemas import UserRead, UserCreate
+from src.operations.router import router as router_operation
+from src.tasks.router import router as router_tasks
+from src.pages.router import router as router_pages
+from src.chat.router import router as router_chat
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
-from config import REDIS_HOST, REDIS_PORT
+from src.config import REDIS_HOST, REDIS_PORT
 
 
 @asynccontextmanager
@@ -27,7 +27,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="src/static"), name="static")
 
 app.include_router(
     fastapi_users.get_auth_router(auth_backend),

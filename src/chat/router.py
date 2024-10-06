@@ -5,9 +5,9 @@ from pydantic import BaseModel
 from sqlalchemy import insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from chat.models import Messages
-from chat.schemas  import MessagesModel  
-from database import async_session_maker, get_async_session
+from src.chat.models import Messages
+from src.chat.schemas  import MessagesModel  
+from src.database import async_session_maker, get_async_session
 
 router = APIRouter(
     prefix="/chat",
