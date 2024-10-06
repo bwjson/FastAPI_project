@@ -11,11 +11,12 @@ from pages.router import router as router_pages
 from chat.router import router as router_chat
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
+from config import REDIS_HOST, REDIS_PORT
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    redis = aioredis.from_url("redis://localhost", encoding="utf8", decode_responses=True)
+    redis = aioredis.from_url(f"redis://{REDIS_HOST}:{REDIS_PORT}", encoding="utf8", decode_responses=True)
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
     yield
     await redis.close()
