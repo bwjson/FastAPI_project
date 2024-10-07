@@ -1,7 +1,13 @@
 from typing import Optional
+from pydantic import BaseModel
 
 from fastapi_users import schemas
 
+class RoleCreate(BaseModel):
+    id: int
+    name: str
+    permissions: dict
+    
 
 class UserRead(schemas.BaseUser[int]):
     id: int
