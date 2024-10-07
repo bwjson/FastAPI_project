@@ -10,7 +10,8 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN chmod a+x docker/*.sh
+RUN chmod a+x docker/app.sh
+RUN chmod a+x docker/celery.sh
 
 RUN alembic upgrade head
 
