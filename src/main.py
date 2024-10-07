@@ -5,13 +5,13 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from redis import asyncio as aioredis
 
-from src.auth.base_config import auth_backend, fastapi_users
-from src.auth.schemas import UserCreate, UserRead
-from src.config import REDIS_HOST, REDIS_PORT
-from src.operations.router import router as router_operation
-from src.tasks.router import router as router_tasks
-from src.pages.router import router as router_pages
-from src.chat.router import router as router_chat
+from auth.base_config import auth_backend, fastapi_users
+from auth.schemas import UserCreate, UserRead
+from config import REDIS_HOST, REDIS_PORT
+from operations.router import router as router_operation
+from tasks.router import router as router_tasks
+from pages.router import router as router_pages
+from chat.router import router as router_chat
 
 app = FastAPI(
     title="Trading App"
