@@ -24,8 +24,6 @@ pip-delete-this-directory.txt
 *.log
 
 # Migrations (for Alembic or other)
-migrations/
-alembic/
 
 # Pytest cache
 .cache/
