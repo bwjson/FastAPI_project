@@ -16,4 +16,4 @@ RUN alembic upgrade head
 
 WORKDIR src
 
-CMD gunicorn -k uvicorn.workers.UvicornWorker main:app
+CMD gunicorn main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind=0.0.0.0:8000
